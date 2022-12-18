@@ -1,5 +1,7 @@
 package lara.pers.ProjectM2.service.impls;
 
+
+
 import java.util.List;
 import java.util.Optional;
 
@@ -11,7 +13,9 @@ import lara.pers.ProjectM2.entity.Doctors;
 import lara.pers.ProjectM2.mapper.DoctorsMapper;
 import lara.pers.ProjectM2.repository.DoctorsRepository;
 import lara.pers.ProjectM2.service.DoctorService;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 public class DoctorsServiceImpl implements DoctorService {
 
@@ -22,20 +26,25 @@ public class DoctorsServiceImpl implements DoctorService {
     public DoctorsServiceImpl(DoctorsMapper mapper, DoctorsRepository repository){
         this.mapper = mapper;
         this.repository = repository;
+        
+        log.info("Constructor DoctorsServiceImpl listo");
     }
 
-    public List<DoctorsDTO> findAll(){
+    public List<DoctorsDTO> findAll() {
         List<Doctors> hospitals  = repository.findAll();
+        
+        log.info("metodo findAll() realizado con exito en DoctorsServiceImpl");
         return hospitals.stream().map(mapper::toDTO).toList(); 
     }
 
     public Optional<DoctorsDTO> findById(long id){
+
         return null;
     }
 
     public DoctorsDTO save(DoctorsDTO data){
         Doctors entity = mapper.toEntity(data);
-
+        log.info("metodo save() realizado con exito en DoctorsServiceImpl");
         return mapper.toDTO(repository.save(entity));
     }
 
@@ -43,13 +52,14 @@ public class DoctorsServiceImpl implements DoctorService {
         Optional<Doctors> result = repository.findById(id);
     
         if (result.isEmpty()) {
-          throw new Exception("We can't found the hospital");
+          log.warn("Result vacio en findById en DoctorsServiceImpl");
+          throw new Exception("We can't found the Doctor");
         }
     
         Doctors hospital = result.get();
-    
+        
         hospital.setName(data.getName());
-    
+        log.info("metodo update() realizado con exito en DoctorsServiceImpl");
         repository.save(hospital);
       }
     
@@ -57,9 +67,9 @@ public class DoctorsServiceImpl implements DoctorService {
         Optional<Doctors> result = repository.findById(id);
     
         if (result.isEmpty()) {
-          throw new Exception("the Hospital doesn't exist");
+          throw new Exception("the Doctor doesn't exist");
         }
-    
+        log.info("metodo delete() realizado con exito en DoctorsServiceImpl");
         repository.deleteById(id);
       }    
     

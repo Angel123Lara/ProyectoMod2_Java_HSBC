@@ -38,7 +38,7 @@ public class Doctors {
     //agregar aqui relacion con la tabla de especialidad
 
     @ManyToOne
-    @JoinColumn(name = "Speciality",referencedColumnName = "name")
+    @JoinColumn(name = "Speciality",referencedColumnName = "id")
     private MedicalSpeciality medicalSpeciality;
     
 }

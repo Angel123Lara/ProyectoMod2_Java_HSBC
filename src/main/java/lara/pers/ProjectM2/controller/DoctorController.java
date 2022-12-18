@@ -53,14 +53,14 @@ public class DoctorController {
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable("id") long id, @RequestBody DoctorsDTO data) throws Exception {
-        log.info("Actualizando registro{id}");
+        log.info("Actualizando registro" + id + "en Tabla Doctor");
         service.update(id, data);
     }
     
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id") long id) throws Exception{
-        log.info("Borrando registro {id}");
+        log.info("Borrando registro " + id + "en Tabla Doctor");
         service.delete(id);
     }
 }

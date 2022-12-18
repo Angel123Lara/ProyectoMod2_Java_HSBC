@@ -12,8 +12,9 @@ import lara.pers.ProjectM2.mapper.MedicalSpecialityMapper;
 
 import lara.pers.ProjectM2.repository.MedicalSpecialRepository;
 import lara.pers.ProjectM2.service.MedicalSpecialityService;
+import lombok.extern.slf4j.Slf4j;
 
-
+@Slf4j
 @Service
 public class MedicalSpecialityImpl implements MedicalSpecialityService {
 
@@ -24,10 +25,12 @@ public class MedicalSpecialityImpl implements MedicalSpecialityService {
     public MedicalSpecialityImpl (MedicalSpecialityMapper mapper, MedicalSpecialRepository repository){
         this.mapper = mapper;
         this.repository = repository;
+        log.info("Constructor MedicalSpecialityImpl listo");
     }
 
     public List<MedicalSpecialityDTO> findAll(){
         List<MedicalSpeciality> medicalSpeciality  = repository.findAll();
+        log.info("metodo findAll() realizado con exito en MedicalSpecialityImp");
         return medicalSpeciality.stream().map(mapper::toDTO).toList(); 
     }
 
@@ -37,7 +40,7 @@ public class MedicalSpecialityImpl implements MedicalSpecialityService {
 
     public MedicalSpecialityDTO save(MedicalSpecialityDTO data){
         MedicalSpeciality entity = mapper.toEntity(data);
-
+        log.info("metodo save() realizado con exito en MedicalSpecialityImpl");
         return mapper.toDTO(repository.save(entity));
     }
 
@@ -45,13 +48,14 @@ public class MedicalSpecialityImpl implements MedicalSpecialityService {
         Optional<MedicalSpeciality> result = repository.findById(id);
     
         if (result.isEmpty()) {
-          throw new Exception("We can't found the hospital");
+          log.warn("Result vacio en findById en MedicalSpecialityImpl");
+          throw new Exception("We can't found the MedicalSpecility");
         }
     
         MedicalSpeciality hospital = result.get();
     
         hospital.setName(data.getName());
-    
+        log.info("metodo update() realizado con exito en MedicalSpecialityImpl");
         repository.save(hospital);
       }
     
@@ -59,9 +63,9 @@ public class MedicalSpecialityImpl implements MedicalSpecialityService {
         Optional<MedicalSpeciality> result = repository.findById(id);
     
         if (result.isEmpty()) {
-          throw new Exception("the Hospital doesn't exist");
+          throw new Exception("the Medical Speciality doesn't exist");
         }
-    
+        log.info("metodo delete() realizado con exito en Medical Speciality");
         repository.deleteById(id);
       }    
     
