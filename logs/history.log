@@ -1078,3 +1078,139 @@ Caused by: java.sql.SQLException: Referencing column 'speciality' and referenced
 [18/12/2022 03:28:23] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] [INFO ] - Closing JPA EntityManagerFactory for persistence unit 'default'
 [18/12/2022 03:28:23] [com.zaxxer.hikari.HikariDataSource] [INFO ] - HikariPool-1 - Shutdown initiated...
 [18/12/2022 03:28:23] [com.zaxxer.hikari.HikariDataSource] [INFO ] - HikariPool-1 - Shutdown completed.
+[18/12/2022 03:28:56] [lara.pers.ProjectM2.ProjectM2Application] [INFO ] - Starting ProjectM2Application using Java 19.0.1 with PID 25200 (C:\Users\aj.lara\Documents\Angel Personal Temporal\BeduCursoHSBC\ProyectoFase2\ProjectM2\target\classes started by aj.lara in C:\Users\aj.lara\Documents\Angel Personal Temporal\BeduCursoHSBC\ProyectoFase2\ProjectM2)
+[18/12/2022 03:28:56] [lara.pers.ProjectM2.ProjectM2Application] [INFO ] - No active profile set, falling back to 1 default profile: "default"
+[18/12/2022 03:28:56] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [INFO ] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[18/12/2022 03:28:56] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [INFO ] - Finished Spring Data repository scanning in 71 ms. Found 3 JPA repository interfaces.
+[18/12/2022 03:28:57] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [INFO ] - Tomcat initialized with port(s): 8001 (http)
+[18/12/2022 03:28:57] [org.apache.catalina.core.StandardService] [INFO ] - Starting service [Tomcat]
+[18/12/2022 03:28:57] [org.apache.catalina.core.StandardEngine] [INFO ] - Starting Servlet engine: [Apache Tomcat/10.1.1]
+[18/12/2022 03:28:57] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] [INFO ] - Initializing Spring embedded WebApplicationContext
+[18/12/2022 03:28:57] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [INFO ] - Root WebApplicationContext: initialization completed in 1064 ms
+[18/12/2022 03:28:57] [org.hibernate.jpa.internal.util.LogHelper] [INFO ] - HHH000204: Processing PersistenceUnitInfo [name: default]
+[18/12/2022 03:28:57] [org.hibernate.Version] [INFO ] - HHH000412: Hibernate ORM core version 6.1.5.Final
+[18/12/2022 03:28:57] [org.hibernate.orm.deprecation] [WARN ] - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+[18/12/2022 03:28:57] [com.zaxxer.hikari.HikariDataSource] [INFO ] - HikariPool-1 - Starting...
+[18/12/2022 03:28:58] [com.zaxxer.hikari.pool.HikariPool] [INFO ] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a497286
+[18/12/2022 03:28:58] [com.zaxxer.hikari.HikariDataSource] [INFO ] - HikariPool-1 - Start completed.
+[18/12/2022 03:28:58] [SQL dialect] [INFO ] - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[18/12/2022 03:28:58] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [WARN ] - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table doctors 
+       add constraint FK8dt71un7pgvjneb7tnfe8pplq 
+       foreign key (speciality) 
+       references medical_speciality (name)" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table doctors 
+       add constraint FK8dt71un7pgvjneb7tnfe8pplq 
+       foreign key (speciality) 
+       references medical_speciality (name)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:587)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:532)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:458)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:278)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:126)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:334)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1425)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1797)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1747)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:905)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
+	at lara.pers.ProjectM2.ProjectM2Application.main(ProjectM2Application.java:10)
+Caused by: java.sql.SQLException: Failed to add the foreign key constraint. Missing index for constraint 'FK8dt71un7pgvjneb7tnfe8pplq' in the referenced table 'medical_speciality'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 35 common frames omitted
+[18/12/2022 03:28:58] [org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl] [WARN ] - GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table doctors 
+       add constraint FK8dt71un7pgvjneb7tnfe8pplq 
+       foreign key (speciality) 
+       references medical_speciality (id)" via JDBC Statement
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table doctors 
+       add constraint FK8dt71un7pgvjneb7tnfe8pplq 
+       foreign key (speciality) 
+       references medical_speciality (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:587)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:532)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:458)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:278)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:126)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:284)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:143)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1429)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:140)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:334)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1425)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1797)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1747)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1130)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:905)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:432)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
+	at lara.pers.ProjectM2.ProjectM2Application.main(ProjectM2Application.java:10)
+Caused by: java.sql.SQLException: Referencing column 'speciality' and referenced column 'id' in foreign key constraint 'FK8dt71un7pgvjneb7tnfe8pplq' are incompatible.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 35 common frames omitted
+[18/12/2022 03:28:58] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [INFO ] - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[18/12/2022 03:28:58] [org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean] [INFO ] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[18/12/2022 03:28:59] [lara.pers.ProjectM2.controller.DoctorController] [INFO ] - start Doctor Controller
+[18/12/2022 03:28:59] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [WARN ] - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[18/12/2022 03:28:59] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [INFO ] - Tomcat started on port(s): 8001 (http) with context path ''
+[18/12/2022 03:28:59] [lara.pers.ProjectM2.ProjectM2Application] [INFO ] - Started ProjectM2Application in 3.458 seconds (process running for 3.753)
+[18/12/2022 03:29:46] [org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]] [INFO ] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[18/12/2022 03:29:46] [org.springframework.web.servlet.DispatcherServlet] [INFO ] - Initializing Servlet 'dispatcherServlet'
+[18/12/2022 03:29:46] [org.springframework.web.servlet.DispatcherServlet] [INFO ] - Completed initialization in 1 ms
+[18/12/2022 03:29:46] [lara.pers.ProjectM2.controller.DoctorController] [INFO ] - Access to main page of Doctor directory
