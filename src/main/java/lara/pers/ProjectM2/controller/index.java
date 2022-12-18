@@ -25,7 +25,7 @@ public class index {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public String indexStart(){
         log.info("Se accede a pagina princiapal de la aplicacion");
-        return "Bienvenido a la API MedicinaInyourHands";
+        return "Bienvenido a la API MedicineInyourHands";
 
 
     }
