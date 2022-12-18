@@ -32,4 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 
-logs/history.log
+/logs/history.log
