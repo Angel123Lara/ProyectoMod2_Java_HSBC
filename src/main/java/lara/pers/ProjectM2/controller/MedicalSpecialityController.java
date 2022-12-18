@@ -27,7 +27,7 @@ public class MedicalSpecialityController {
 
     @Autowired
     public MedicalSpecialityController(MedicalSpecialityService service){
-        log.info("Iniciando Doctor Controller");
+        log.info("Iniciando Medical Speciality Controller");
         this.service = service;
     }
 
